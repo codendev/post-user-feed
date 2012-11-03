@@ -1,0 +1,147 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wprss\n"
+"POT-Creation-Date: 2012-10-05 16:59+0500\n"
+"PO-Revision-Date: 2012-10-05 17:00+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-KeywordsList: _;__;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: post-user-feed.php:209 post-user-feed.php:333
+msgid "continue reading"
+msgstr ""
+
+#: post-user-feed.php:524
+msgid "An error occurred.  Please go back and try again."
+msgstr ""
+
+#: func/admin-options.php:9 func/admin-options.php:81
+msgid "Post User Feed Settings"
+msgstr ""
+
+#: func/admin-options.php:9
+msgid "Settings"
+msgstr ""
+
+#: func/admin-options.php:10 func/admin-options.php:48
+msgid "Post User Feed Help"
+msgstr ""
+
+#: func/admin-options.php:10
+msgid "Help"
+msgstr ""
+
+#: func/admin-options.php:27
+msgid "Feed limit"
+msgstr ""
+
+#: func/admin-options.php:30
+msgid "Excerpt limit (words)"
+msgstr ""
+
+#: func/admin-options.php:33
+msgid "Content limit (words)"
+msgstr ""
+
+#: func/admin-options.php:36
+msgid "Email text"
+msgstr ""
+
+#: func/admin-options.php:88
+msgid "Save Settings"
+msgstr ""
+
+#: func/cron-jobs.php:33
+msgid "Once Weekly"
+msgstr ""
+
+#: func/feed_custom_type.php:9 func/feed_custom_type.php:11
+#: func/feed_custom_type.php:20
+msgid "Post User Feed"
+msgstr ""
+
+#: func/feed_custom_type.php:10
+msgid "User Feed"
+msgstr ""
+
+#: func/feed_custom_type.php:12
+msgid "All User Post Feed"
+msgstr ""
+
+#: func/feed_custom_type.php:13
+msgid "Add User Feed"
+msgstr ""
+
+#: func/feed_custom_type.php:14
+msgid "Edit User Feed"
+msgstr ""
+
+#: func/feed_custom_type.php:15
+msgid "New User Feed"
+msgstr ""
+
+#: func/feed_custom_type.php:16
+msgid "View User Feed"
+msgstr ""
+
+#: func/feed_custom_type.php:17
+msgid "Search Feeds"
+msgstr ""
+
+#: func/feed_custom_type.php:18
+msgid "No User Feed Found"
+msgstr ""
+
+#: func/feed_custom_type.php:19
+msgid "No User Feed Found In Trash"
+msgstr ""
+
+#: func/feed_custom_type.php:64
+msgid "Blog Name"
+msgstr ""
+
+#: func/feed_custom_type.php:65
+msgid "Email"
+msgstr ""
+
+#: func/feed_custom_type.php:66
+msgid "URL"
+msgstr ""
+
+#: func/feed_custom_type.php:102
+msgid "Save Feed Source"
+msgstr ""
+
+#: func/feed_custom_type.php:113
+msgid "User Feed Post Details"
+msgstr ""
+
+#: func/feed_custom_type.php:122
+msgid "Latest Feeds"
+msgstr ""
+
+#: func/feed_custom_type.php:214
+msgid "Delete Permanently"
+msgstr ""
+
+#: func/feed_custom_type.php:216
+msgid "Move to Trash"
+msgstr ""
+
+#: func/feed_custom_type.php:227
+msgid "Approve"
+msgstr ""
+
+#: func/feed_custom_type.php:229
+msgid "Update Blog Feeds"
+msgstr ""
+
+#: func/util.php:7
+msgid "This plugin requires WordPress version 3.2 or higher."
+msgstr ""

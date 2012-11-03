@@ -1,0 +1,5 @@
+body.post-type-pur_user_feed #titlediv div.inside { display: none !important; }
+
+body.post-type-pur_user_feed  div#message{display:none !important;}
+
+body.post-type-pur_user_feed #minor-publishing{display:none !important;}
