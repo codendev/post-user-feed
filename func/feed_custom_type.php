@@ -32,8 +32,8 @@ function pur_register_post_types() {
 					'with_front' => false
 			),
 			'labels'        => $labels,
-			'taxonomies' => array('category','post_tag') 
-				
+			'taxonomies' => array('category','post_tag')
+
 	)
 	);
 
@@ -42,7 +42,7 @@ function pur_register_post_types() {
 
 	register_taxonomy_for_object_type('category', 'pur_user_feed');
 	register_taxonomy_for_object_type('post_tag', 'pur_user_feed');
-	
+
 }
 
 add_filter( 'manage_edit-pur_user_feed_columns', 'pur_add_columns');
@@ -55,7 +55,7 @@ function pur_add_columns( $columns ) {
 			'title'       => __( 'Blog Name', 'pur' ),
 			'email'       =>__( 'Email', 'pur' ),
 			'url'         => __( 'URL', 'pur' ),
-				
+
 	);
 	;
 	return array_merge($myColumn,$columns);
@@ -89,51 +89,51 @@ function pur_add_meta_boxes() {
 	//remove_meta_box( 'submitdiv', 'pur_user_feed', 'side' );
 
 	add_meta_box(
-			'submitdiv',
-			__( 'Save Feed Source', 'pur' ),
-			 'post_submit_meta_box',
-			'pur_user_feed', // $page
-			'side',
-			'high');
+	'submitdiv',
+	__( 'Save Feed Source', 'pur' ),
+	'post_submit_meta_box',
+	'pur_user_feed', // $page
+	'side',
+	'high');
 
 
 
 
 	add_meta_box(
-			'custom_meta_box', // $id
-			__( 'User Feed Post Details', 'pur' ), // $title
-			'pur_user_custom_field', // $callback
-			'pur_user_feed', // $page
-			'normal', // $context
-			'high'); // $priority
+	'custom_meta_box', // $id
+	__( 'User Feed Post Details', 'pur' ), // $title
+	'pur_user_custom_field', // $callback
+	'pur_user_feed', // $page
+	'normal', // $context
+	'high'); // $priority
 
 
 	add_meta_box(
-			'custom_feed_box', // $id
-			__( 'Latest Feeds', 'pur' ), // $title
-			'pur_show_feed_box', // $callback
-			'pur_user_feed', // $page
-			'normal', // $context
-			'high'); // $priority
+	'custom_feed_box', // $id
+	__( 'Latest Feeds', 'pur' ), // $title
+	'pur_show_feed_box', // $callback
+	'pur_user_feed', // $page
+	'normal', // $context
+	'high'); // $priority
 
 
 }
 
 function pur_show_feed_box($post){
 
-	
+
 	$top_feeds = get_post_meta( $post->ID, "top_feeds", true );
-	
+
 	$top_feeds=pur_get_latest_feed(get_post_meta( $post->ID, "url", true ),get_post_meta( $post->ID, "thumbs", true ));
-	
+
 	if(!empty($top_feeds)){
-			update_post_meta( $post->ID, "top_feeds", implode(",",$top_feeds) );
+		update_post_meta( $post->ID, "top_feeds", implode(",",$top_feeds) );
 	}
-	
+
 	$data["top_feeds"]=$top_feeds;
-	
+
 	$data["updated"]= date("F j, Y, g:i a");
-	
+
 	load_plugin_template("feed_list.tpl.php",$data);
 
 
@@ -151,8 +151,8 @@ function pur_user_custom_field($post){
 add_action( 'save_post', 'pur_save_custom_fields' );
 
 function pur_save_custom_fields( $post_id ) {
-	
-	
+
+
 	// check autosave
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)
 		return $post_id;
@@ -180,12 +180,12 @@ function pur_save_custom_fields( $post_id ) {
 	} elseif ( '' == $new && $old ) {
 		delete_post_meta( $post_id, "url", $old );
 	}
-	
+
 	$old = get_post_meta( $post_id, "thumbs", true );
-	
-	
+
+
 	$new=serialize($_POST['images']);
-	
+
 	if ( $new && $new != $old ) {
 		update_post_meta( $post_id, "thumbs", $new );
 	} elseif ( '' == $new && $old ) {
@@ -197,12 +197,13 @@ function pur_save_custom_fields( $post_id ) {
 add_filter( 'gettext', 'pur_change_publish_button', 10, 2 );
 
 function pur_change_publish_button( $translation, $text ) {
-	if ( 'pur_user_feed' == get_post_type())
+	if ( 'pur_user_feed' == get_post_type()){
 		if ( $text == 'Publish' )
 			return __( 'Approve', 'pur' );
 		if ( $text == 'Update' )
-				return __( 'Update Blog Feeds', 'pur' );
-	
+			return __( 'Update Blog Feeds', 'pur' );
+	}
+
 	return $translation;
 }
 
